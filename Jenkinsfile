@@ -2,8 +2,10 @@ pipeline {
   agent any
   stages {
     stage('Build') {
-      sh 'chmod a+x run_build_script.sh'
-      sh './run_build_script.sh'
+      steps {
+        sh 'chmod a+x run_build_script.sh'
+        sh './run_build_script.sh'
+      }
     }
     stage('Test') {
       steps {
